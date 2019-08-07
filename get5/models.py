@@ -406,7 +406,7 @@ class Match(db.Model):
             add_if('logo', team.logo)
             add_if('matchtext', matchtext)
             d[teamkey]['players'] = filter(lambda x: x != '', team.auths)
-            d['players_per_team'] = d[teamkey]['players'].count()
+            d['players_per_team'] = len(d[teamkey]['players'])
 
         add_team_data('team1', self.team1_id, self.team1_string)
         add_team_data('team2', self.team2_id, self.team2_string)
